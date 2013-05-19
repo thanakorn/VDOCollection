@@ -1,21 +1,21 @@
 package vdocollection
 
-
+import static org.junit.Assert.*
 
 import grails.test.mixin.*
+import grails.test.mixin.support.*
 import org.junit.*
 
 /**
- * See the API for {@link grails.test.mixin.domain.DomainClassUnitTestMixin} for usage instructions
+ * See the API for {@link grails.test.mixin.support.GrailsUnitTestMixin} for usage instructions
  */
-@TestFor(Video)
+@TestMixin(GrailsUnitTestMixin)
 class VideoTests {
 
-    @Test
-	void testCreateVideo(){
-		def vdo = new Video(title:'New video',url:'http://www.youtube.com/watch?v=0DYptJTSF-k',category:'technology')
+    void testCreateVideo(){
+		def vdo = new Video(title:'New video',url:'http://www.youtube.com/watch?v=0DYptJTSF-k',description:'Test create video')
 		assert vdo.title == "New video"
 		assert vdo.url == "http://www.youtube.com/watch?v=0DYptJTSF-k"
-		assert vdo.category == "technology"
+		assert vdo.description == "Test create video"
 	}
 }

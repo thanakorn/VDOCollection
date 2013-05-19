@@ -11,7 +11,11 @@ import org.junit.*
 @TestFor(Video)
 class VideoTests {
 
-    void testSomething() {
-       fail "Implement me"
-    }
+    @Test
+	void testCreateVideo(){
+		def vdo = new Video(title:'New video',url:'http://www.youtube.com/watch?v=0DYptJTSF-k',category:'technology')
+		assert vdo.title == "New video"
+		assert vdo.url == "http://www.youtube.com/watch?v=0DYptJTSF-k"
+		assert vdo.category == "technology"
+	}
 }
